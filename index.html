@@ -1,0 +1,552 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>91大赛吃瓜爆料-大赛吃瓜爆料热点_91大赛爆料合集与话题追踪</title>
+<meta name="description" content="91大赛吃瓜爆料热点聚合页，按话题梳理大赛吃瓜爆料中的争议焦点、网络讨论与爆料线索，提供清晰的分区浏览与快速入口。">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%2314101c'/%3E%3Ccircle cx='24' cy='26' r='9' fill='%23ff5a7a'/%3E%3Ccircle cx='42' cy='38' r='7' fill='%23ffc14d'/%3E%3Cpath d='M14 50c8-6 20-6 28 0' stroke='%237ce0c0' stroke-width='4' fill='none' stroke-linecap='round'/%3E%3C/svg%3E">
+<style>
+  :root{
+    --ink:#191322;
+    --ink-2:#3a3247;
+    --muted:#6f6580;
+    --bg:#f7f4fb;
+    --card:#ffffff;
+    --line:#e6dff0;
+    --plum:#2a1f3d;
+    --plum-2:#3c2d55;
+    --rose:#e8405f;
+    --rose-soft:#ffe9ee;
+    --gold:#f0a92e;
+    --mint:#2fbf9b;
+    --radius:16px;
+    --shadow:0 10px 28px rgba(41,26,64,.08);
+  }
+  *{box-sizing:border-box}
+  html{-webkit-text-size-adjust:100%}
+  body{
+    margin:0;
+    font-family:"PingFang SC","Hiragino Sans GB","Microsoft YaHei","Noto Sans SC",system-ui,sans-serif;
+    color:var(--ink);
+    background:var(--bg);
+    line-height:1.75;
+    font-size:16px;
+  }
+  a{color:inherit;text-decoration:none}
+  img,svg{max-width:100%;display:block}
+  .wrap{width:min(1120px,92vw);margin:0 auto}
+
+  /* ---------- header ---------- */
+  header.site{
+    position:sticky;top:0;z-index:50;
+    background:rgba(42,31,61,.96);
+    backdrop-filter:blur(8px);
+    border-bottom:1px solid rgba(255,255,255,.08);
+  }
+  .bar{display:flex;align-items:center;gap:18px;min-height:64px;flex-wrap:wrap;padding:8px 0}
+  .logo{display:flex;align-items:center;gap:10px;color:#fff;font-weight:700;letter-spacing:.3px;font-size:17px}
+  .logo .mark{
+    width:36px;height:36px;border-radius:11px;flex:none;
+    background:linear-gradient(140deg,#ff5a7a,#f0a92e);
+    display:grid;place-items:center;
+  }
+  .logo .mark svg{width:22px;height:22px}
+  nav.main{margin-left:auto;display:flex;gap:4px;flex-wrap:wrap}
+  nav.main a{
+    color:#d9cfe9;font-size:14.5px;padding:7px 12px;border-radius:9px;
+    transition:background .18s,color .18s;
+  }
+  nav.main a:hover,nav.main a:focus-visible{background:rgba(255,255,255,.1);color:#fff;outline:none}
+  .searchbox{
+    display:flex;align-items:center;gap:6px;
+    background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.14);
+    border-radius:10px;padding:4px 4px 4px 12px;
+  }
+  .searchbox input{
+    border:0;background:transparent;color:#fff;font:inherit;font-size:14px;
+    width:132px;padding:5px 0;outline:none;
+  }
+  .searchbox input::placeholder{color:#b6a8cc}
+  .searchbox button{
+    border:0;border-radius:8px;background:#ff5a7a;color:#fff;
+    font:inherit;font-size:13.5px;padding:6px 12px;cursor:pointer;
+  }
+  .searchbox button:hover{background:#ff4166}
+
+  /* ---------- hero ---------- */
+  .hero{
+    position:relative;overflow:hidden;
+    background:
+      radial-gradient(720px 340px at 82% -10%,rgba(255,90,122,.32),transparent 65%),
+      radial-gradient(600px 320px at 8% 110%,rgba(47,191,155,.22),transparent 60%),
+      linear-gradient(160deg,#2a1f3d,#1c1529 70%);
+    color:#fff;
+  }
+  .hero::after{
+    content:"";position:absolute;inset:0;pointer-events:none;
+    background-image:radial-gradient(rgba(255,255,255,.07) 1px,transparent 1px);
+    background-size:22px 22px;opacity:.7;
+  }
+  .hero-inner{position:relative;z-index:2;padding:52px 0 46px;display:grid;grid-template-columns:1.35fr .95fr;gap:40px;align-items:center}
+  .eyebrow{
+    display:inline-flex;align-items:center;gap:8px;
+    font-size:13px;letter-spacing:.6px;color:#ffd9e2;
+    background:rgba(255,90,122,.16);border:1px solid rgba(255,90,122,.36);
+    padding:5px 12px;border-radius:999px;margin-bottom:16px;
+  }
+  .eyebrow .dot{width:7px;height:7px;border-radius:50%;background:#ff5a7a;box-shadow:0 0 0 4px rgba(255,90,122,.22)}
+  h1{
+    font-size:clamp(28px,4.4vw,44px);
+    line-height:1.24;margin:0 0 14px;letter-spacing:.5px;font-weight:800;
+  }
+  h1 .hl{color:#ffb3c2}
+  .lede{color:#cfc3e0;font-size:15.5px;margin:0 0 24px;max-width:38em}
+  .cta-row{display:flex;gap:12px;flex-wrap:wrap}
+  .btn{
+    display:inline-flex;align-items:center;gap:8px;
+    border-radius:11px;padding:11px 20px;font-size:15px;font-weight:600;
+    transition:transform .16s,background .16s;
+  }
+  .btn-primary{background:#ff5a7a;color:#fff;box-shadow:0 8px 20px rgba(255,90,122,.32)}
+  .btn-primary:hover{background:#ff4166;transform:translateY(-1px)}
+  .btn-ghost{background:rgba(255,255,255,.09);color:#fff;border:1px solid rgba(255,255,255,.2)}
+  .btn-ghost:hover{background:rgba(255,255,255,.16)}
+  .hero-stats{display:flex;gap:22px;margin-top:28px;flex-wrap:wrap}
+  .hero-stats div{font-size:13px;color:#b6a8cc}
+  .hero-stats b{display:block;font-size:20px;color:#fff;line-height:1.3}
+
+  .hero-card{
+    background:rgba(255,255,255,.07);
+    border:1px solid rgba(255,255,255,.16);
+    border-radius:20px;padding:18px;
+    backdrop-filter:blur(6px);
+  }
+  .hero-card h2{font-size:15px;margin:0 0 12px;color:#ffd9e2;font-weight:600;letter-spacing:.4px}
+  .hot-list{list-style:none;margin:0;padding:0;display:grid;gap:10px}
+  .hot-list li{
+    display:flex;gap:10px;align-items:flex-start;
+    background:rgba(20,14,30,.42);border-radius:11px;padding:10px 12px;
+    font-size:14px;color:#e6ddf3;
+  }
+  .hot-list .tag{
+    flex:none;font-size:11.5px;font-weight:700;color:#1c1529;
+    background:#ffc14d;border-radius:6px;padding:1px 7px;margin-top:2px;
+  }
+  .hot-list .tag.alt{background:#7ce0c0}
+  .hot-list .tag.pink{background:#ff9db2}
+
+  /* ---------- sections ---------- */
+  section{padding:54px 0}
+  section.tint{background:#fff}
+  .sec-head{display:flex;align-items:flex-end;gap:16px;flex-wrap:wrap;margin-bottom:26px}
+  .sec-head h2{
+    font-size:clamp(21px,2.6vw,27px);margin:0;letter-spacing:.4px;font-weight:800;color:var(--plum);
+  }
+  .sec-head h2::before{
+    content:"";display:inline-block;width:6px;height:20px;border-radius:3px;
+    background:linear-gradient(#ff5a7a,#f0a92e);margin-right:11px;vertical-align:-3px;
+  }
+  .sec-head p{margin:0;color:var(--muted);font-size:14.5px;max-width:56ch}
+  .sec-head .more{margin-left:auto;font-size:14px;color:var(--rose);font-weight:600}
+  .sec-head .more:hover{text-decoration:underline}
+
+  .grid{display:grid;gap:20px}
+  .g3{grid-template-columns:repeat(3,1fr)}
+  .g2{grid-template-columns:1.15fr .85fr}
+
+  .card{
+    background:var(--card);border:1px solid var(--line);border-radius:var(--radius);
+    padding:22px;box-shadow:var(--shadow);
+    transition:transform .18s,border-color .18s;
+  }
+  .card:hover{transform:translateY(-3px);border-color:#d8cbe9}
+  .card .kicker{
+    display:inline-block;font-size:12px;font-weight:700;letter-spacing:.5px;
+    color:#a5314a;background:var(--rose-soft);border-radius:7px;padding:2px 9px;margin-bottom:12px;
+  }
+  .card .kicker.mint{color:#0f6d59;background:#e3f8f2}
+  .card .kicker.gold{color:#8a5c05;background:#fdf1d8}
+  .card h3{font-size:17.5px;margin:0 0 9px;line-height:1.45;color:var(--plum-2)}
+  .card p{margin:0;font-size:14.5px;color:var(--ink-2)}
+  .card .meta{margin-top:14px;font-size:12.5px;color:var(--muted);display:flex;gap:14px;flex-wrap:wrap}
+
+  .topic-list{list-style:none;margin:0;padding:0;display:grid;gap:14px}
+  .topic-list li{
+    display:grid;grid-template-columns:auto 1fr;gap:14px;
+    background:#fff;border:1px solid var(--line);border-radius:13px;padding:16px 18px;
+    box-shadow:0 4px 14px rgba(41,26,64,.05);
+  }
+  .rank{
+    width:32px;height:32px;border-radius:9px;flex:none;
+    display:grid;place-items:center;font-weight:800;font-size:15px;
+    background:#f1ebf8;color:var(--plum-2);
+  }
+  .topic-list li:nth-child(1) .rank{background:#ff5a7a;color:#fff}
+  .topic-list li:nth-child(2) .rank{background:#f0a92e;color:#fff}
+  .topic-list li:nth-child(3) .rank{background:#2fbf9b;color:#fff}
+  .topic-list h3{font-size:16px;margin:0 0 5px;color:var(--plum-2)}
+  .topic-list p{margin:0;font-size:14px;color:var(--ink-2)}
+  .topic-list .sub{font-size:12.5px;color:var(--muted);margin-top:7px}
+
+  .guide{
+    background:linear-gradient(150deg,#2a1f3d,#3c2d55);
+    color:#fff;border-radius:20px;padding:30px;display:grid;
+    grid-template-columns:1fr 1fr;gap:26px;align-items:start;
+  }
+  .guide h3{margin:0 0 10px;font-size:20px;color:#ffd9e2}
+  .guide p{margin:0 0 14px;font-size:14.5px;color:#cfc3e0}
+  .guide ol{margin:0;padding-left:20px;color:#e6ddf3;font-size:14.5px}
+  .guide ol li{margin-bottom:9px}
+  .guide ol li b{color:#ffc14d}
+  .checks{display:grid;gap:11px}
+  .checks div{
+    background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.14);
+    border-radius:11px;padding:11px 14px;font-size:14px;color:#e6ddf3;
+    display:flex;gap:9px;align-items:flex-start;
+  }
+  .checks svg{width:17px;height:17px;flex:none;margin-top:4px}
+
+  .dl{
+    display:flex;align-items:center;gap:20px;flex-wrap:wrap;
+    background:#fff;border:1px dashed #d5c8e6;border-radius:16px;padding:22px;
+  }
+  .dl .ico{
+    width:48px;height:48px;border-radius:13px;flex:none;
+    background:linear-gradient(140deg,#ffe9ee,#fdf1d8);
+    display:grid;place-items:center;
+  }
+  .dl h3{margin:0 0 4px;font-size:16.5px;color:var(--plum-2)}
+  .dl p{margin:0;font-size:14px;color:var(--muted)}
+  .dl .btn-dl{
+    margin-left:auto;background:#2a1f3d;color:#fff;border-radius:10px;
+    padding:10px 22px;font-weight:600;font-size:14.5px;
+    pointer-events:none;opacity:.85;
+  }
+
+  footer.site{
+    background:#1c1529;color:#b6a8cc;padding:36px 0 26px;font-size:14px;
+  }
+  footer.site .f-top{display:flex;gap:26px;flex-wrap:wrap;justify-content:space-between;align-items:flex-start}
+  footer.site strong{color:#fff;display:block;margin-bottom:8px;font-size:15px}
+  footer.site a{color:#cfc3e0}
+  footer.site a:hover{color:#fff;text-decoration:underline}
+  footer.site .f-links{display:flex;gap:16px;flex-wrap:wrap}
+  footer.site .f-note{
+    margin-top:22px;padding-top:16px;border-top:1px solid rgba(255,255,255,.1);
+    font-size:12.5px;color:#8d7fa6;line-height:1.8;
+  }
+
+  @media (max-width:900px){
+    .hero-inner{grid-template-columns:1fr;gap:28px}
+    .g3{grid-template-columns:1fr 1fr}
+    .g2{grid-template-columns:1fr}
+    .guide{grid-template-columns:1fr}
+  }
+  @media (max-width:640px){
+    body{font-size:15.5px}
+    nav.main{order:3;width:100%;margin-left:0;justify-content:space-between;gap:0;padding-top:4px}
+    nav.main a{padding:7px 8px;font-size:13.5px}
+    .searchbox{order:2;margin-left:auto}
+    .searchbox input{width:96px}
+    .hero-inner{padding:34px 0 32px}
+    .g3{grid-template-columns:1fr}
+    section{padding:40px 0}
+    .card{padding:18px}
+    .guide{padding:22px}
+    .topic-list li{padding:14px}
+    .dl .btn-dl{margin-left:0;width:100%;text-align:center}
+    .sec-head .more{margin-left:0}
+  }
+</style>
+    <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+</head>
+<body>
+
+<header class="site">
+  <div class="wrap bar">
+    <a class="logo" href="#top" aria-label="91大赛吃瓜爆料 首页">
+      <span class="mark" aria-hidden="true">
+        <svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round">
+          <circle cx="9" cy="9" r="4"/><circle cx="16.5" cy="14.5" r="3"/>
+          <path d="M4 20c3-2.4 7-2.4 10 0"/>
+        </svg>
+      </span>
+      <span>91大赛吃瓜爆料</span>
+    </a>
+    <div class="searchbox" role="search">
+      <input id="q" type="search" placeholder="搜话题关键词" aria-label="搜索大赛吃瓜爆料话题">
+      <button type="button" id="qbtn">搜索</button>
+    </div>
+    <nav class="main" aria-label="主导航">
+      <a href="#hot">热榜</a>
+      <a href="#topics">话题分区</a>
+      <a href="#clues">爆料线索</a>
+      <a href="#read">怎么看</a>
+      <a href="#dl">合集下载</a>
+    </nav>
+  </div>
+</header>
+
+<main id="top">
+
+  <!-- HERO -->
+  <div class="hero">
+    <div class="wrap hero-inner">
+      <div>
+        <span class="eyebrow"><span class="dot"></span>热点话题聚合 · 持续更新</span>
+        <h1>91大赛吃瓜爆料</h1>
+        <p class="lede">把散落在各个讨论区的说法集中到一处：谁在吵、吵的是什么、哪些细节被反复提到。91大赛吃瓜爆料按话题分区排布，先看热榜，再进入具体事件，减少来回翻找的时间。</p>
+        <div class="cta-row">
+          <a class="btn btn-primary" href="#hot">
+            <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M13 2 4 14h6l-1 8 9-12h-6z"/></svg>
+            查看最新热榜
+          </a>
+          <a class="btn btn-ghost" href="#topics">按话题浏览</a>
+        </div>
+        <div class="hero-stats">
+          <div><b>6</b>个话题分区</div>
+          <div><b>3</b>步核对线索</div>
+          <div><b>每日</b>梳理讨论走向</div>
+        </div>
+      </div>
+
+      <aside class="hero-card" aria-label="热榜速览">
+        <h2>热榜速览</h2>
+        <ul class="hot-list">
+          <li><span class="tag">热</span><span>某大赛名单公布后引发的争议讨论</span></li>
+          <li><span class="tag pink">新</span><span>评审标准被质疑，网友要求公开细则</span></li>
+          <li><span class="tag alt">议</span><span>往届结果被重新翻出对照</span></li>
+          <li><span class="tag">热</span><span>选手回应与现场说法出现分歧</span></li>
+        </ul>
+      </aside>
+    </div>
+  </div>
+
+  <!-- 热榜 -->
+  <section id="hot">
+    <div class="wrap">
+      <div class="sec-head">
+        <h2>今日热榜</h2>
+        <p>按讨论热度与新增说法排序，每条只保留可核对的部分，未证实的猜测单独标注。</p>
+        <a class="more" href="#topics">全部话题 →</a>
+      </div>
+      <div class="grid g3">
+        <article class="card">
+          <span class="kicker">名单争议</span>
+          <h3>入选名单与公开报名记录对不上</h3>
+          <p>有网友把公示名单和报名阶段的截图做对照，指出个别条目信息不一致。讨论集中在公示口径是否统一，尚未见到主办方的完整说明。</p>
+          <div class="meta"><span>讨论热度 高</span><span>状态：待回应</span></div>
+        </article>
+        <article class="card">
+          <span class="kicker gold">评审细则</span>
+          <h3>评分标准是否提前公开成焦点</h3>
+          <p>争议点在于细则公布时间与评选时间的前后关系。部分参与者表示赛前并未见到完整评分表，这一说法目前只有单方面陈述。</p>
+          <div class="meta"><span>讨论热度 中高</span><span>状态：多方说法</span></div>
+        </article>
+        <article class="card">
+          <span class="kicker mint">往届对照</span>
+          <h3>旧结果被重新拿出来比对</h3>
+          <p>网友把往届同环节的处理方式与本次并排比较，试图找出规律。对照本身能提供参考，但不同届次的规则并不完全一致。</p>
+          <div class="meta"><span>讨论热度 中</span><span>状态：持续更新</span></div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- 话题分区 -->
+  <section class="tint" id="topics">
+    <div class="wrap">
+      <div class="sec-head">
+        <h2>话题分区</h2>
+        <p>91大赛吃瓜爆料的内容按争议类型分开，方便只关心某一类说法的读者直接进入。</p>
+      </div>
+      <ol class="topic-list">
+        <li>
+          <span class="rank">1</span>
+          <div>
+            <h3>名单与资格类</h3>
+            <p>围绕入选条件、报名材料、公示时间展开。判断的关键是同一份信息在不同渠道是否一致。</p>
+            <div class="sub">常见线索：公示截图、报名页面、时间戳</div>
+          </div>
+        </li>
+        <li>
+          <span class="rank">2</span>
+          <div>
+            <h3>评审与评分类</h3>
+            <p>关注评分表是否公开、评委构成、打分区间。分歧多出现在细则的公布时点，而非分数本身。</p>
+            <div class="sub">常见线索：评分表、流程说明、现场记录</div>
+          </div>
+        </li>
+        <li>
+          <span class="rank">3</span>
+          <div>
+            <h3>现场与回应类</h3>
+            <p>当事人回应、现场描述、后续补充说明。这类内容变数最大，旧说法常被新回应覆盖。</p>
+            <div class="sub">常见线索：回应原文、完整视频、后续声明</div>
+          </div>
+        </li>
+        <li>
+          <span class="rank">4</span>
+          <div>
+            <h3>往届对照类</h3>
+            <p>把历史结果与本次并排看，用于判断是否为偶发。需注意届次之间规则调整带来的差异。</p>
+            <div class="sub">常见线索：历年公示、旧帖存档、规则版本</div>
+          </div>
+        </li>
+        <li>
+          <span class="rank">5</span>
+          <div>
+            <h3>传播与澄清类</h3>
+            <p>截图被反复转发后出现的走样版本。阅读时要回到最早出处，而不是转发链中段。</p>
+            <div class="sub">常见线索：首发出处、转发路径、澄清文</div>
+          </div>
+        </li>
+        <li>
+          <span class="rank">6</span>
+          <div>
+            <h3>延伸讨论类</h3>
+            <p>由单件事引出的更大范围讨论，例如公开透明度与信息发布节奏。属观点层面，与事实层分开呈现。</p>
+            <div class="sub">常见线索：评论汇总、长文分析、公开讨论</div>
+          </div>
+        </li>
+      </ol>
+    </div>
+  </section>
+
+  <!-- 爆料线索 + 判断方法 -->
+  <section id="clues">
+    <div class="wrap">
+      <div class="sec-head">
+        <h2>爆料线索怎么读</h2>
+        <p>同一个话题下往往混着截图、转述和推测。下面的顺序能帮助你先分清层次，再决定要不要跟。</p>
+      </div>
+      <div class="grid g2">
+        <div class="guide">
+          <div>
+            <h3>三步核对</h3>
+            <p>91大赛吃瓜爆料中出现的说法，多数可以在几分钟内完成初步分层。</p>
+            <ol>
+              <li><b>找最早出处。</b>看截图或文字最早出现在哪里，谁先发布，是否有原始链接。</li>
+              <li><b>看是否有原件。</b>公示文件、评分表、回应原文属于原件；转述和二次配图不算。</li>
+              <li><b>标注状态。</b>区分「已确认」「单方说法」「推测」三种，避免把猜测当结论。</li>
+            </ol>
+          </div>
+          <div class="checks">
+            <div>
+              <svg viewBox="0 0 24 24" fill="none" stroke="#7ce0c0" stroke-width="2.4" stroke-linecap="round"><path d="m4 12 5 5L20 6"/></svg>
+              <span>能打开原始链接的说法，可信度先加一层</span>
+            </div>
+            <div>
+              <svg viewBox="0 0 24 24" fill="none" stroke="#ffc14d" stroke-width="2.4" stroke-linecap="round"><path d="M12 8v5"/><circle cx="12" cy="17" r=".6" fill="#ffc14d"/><circle cx="12" cy="12" r="9"/></svg>
+              <span>只有截图无原件的，标为待核实</span>
+            </div>
+            <div>
+              <svg viewBox="0 0 24 24" fill="none" stroke="#ff9db2" stroke-width="2.4" stroke-linecap="round"><path d="M18 6 6 18M6 6l12 12"/></svg>
+              <span>带情绪判断的转述，与事实分开记录</span>
+            </div>
+          </div>
+        </div>
+        <div class="card">
+          <span class="kicker mint">常见误区</span>
+          <h3>被转发最多的，不一定是最早的</h3>
+          <p>截图在传播中容易被裁剪、加字或替换时间。同一张图出现多个版本时，先比对边角信息和文件时间，再看文字内容，往往更快找到差异点。</p>
+          <p style="margin-top:12px">另外，把不同届次的规则直接套用，容易得出偏差结论。规则版本变化本身就是讨论的一部分，值得单独列出。</p>
+          <div class="meta"><span>适用：截图类爆料</span><span>适用：往届对照</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 阅读路径 -->
+  <section class="tint" id="read">
+    <div class="wrap">
+      <div class="sec-head">
+        <h2>按需求进入</h2>
+        <p>不同读者关心的部分不同，91大赛吃瓜爆料把常见路径直接列出来，省去逐条翻找。</p>
+      </div>
+      <div class="grid g3">
+        <article class="card">
+          <span class="kicker">只想快速了解</span>
+          <h3>先看热榜三条</h3>
+          <p>热榜保留了当前讨论最集中的争议点，每条附一句现状说明，两分钟能建立基本印象。</p>
+        </article>
+        <article class="card">
+          <span class="kicker gold">想追某个话题</span>
+          <h3>进入对应分区</h3>
+          <p>按名单、评审、回应、往届、澄清、延伸六类归位，同一事件的不同说法放在同一分区内对照。</p>
+        </article>
+        <article class="card">
+          <span class="kicker mint">想自己判断</span>
+          <h3>用三步核对法</h3>
+          <p>先找出处，再看原件，最后标注状态。三步完成后，多数说法能被归入明确的可信层级。</p>
+        </article>
+      </div>
+
+      <div style="margin-top:26px" class="dl" id="dl">
+        <span class="ico" aria-hidden="true">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#e8405f" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v11"/><path d="m7 10 5 5 5-5"/><path d="M4 20h16"/></svg>
+        </span>
+        <div>
+          <h3>话题合集下载</h3>
+          <p>整理当前分区的话题索引，便于离线比对与记录。</p>
+        </div>
+        <a class="btn-dl" href="#" data-download-placeholder="true" aria-disabled="true" tabindex="-1">下载</a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site">
+  <div class="wrap">
+    <div class="f-top">
+      <div>
+        <strong>91大赛吃瓜爆料</strong>
+        <div style="max-width:34em">热点话题聚合与线索分层，把讨论中的事实、说法与推测分开呈现，方便快速了解与自行判断。</div>
+      </div>
+      <div class="f-links">
+        <a href="#hot">今日热榜</a>
+        <a href="#topics">话题分区</a>
+        <a href="#clues">线索读法</a>
+        <a href="#read">按需求进入</a>
+        <a href="#dl">合集下载</a>
+      </div>
+    </div>
+    <div class="f-note">
+      页面内容为公开讨论的汇总与整理，涉及具体争议时以当事人与主办方的正式说明为准。91大赛吃瓜爆料不对未经证实的说法作出结论，相关条目会随讨论进展更新状态标注。
+    </div>
+  </div>
+</footer>
+
+<script>
+  (function(){
+    var input=document.getElementById('q');
+    var btn=document.getElementById('qbtn');
+    function go(){
+      var v=(input.value||'').trim();
+      if(!v){input.focus();return;}
+      var map=[
+        {k:['名单','资格','报名','公示'],t:'#topics'},
+        {k:['评审','评分','评委','细则'],t:'#topics'},
+        {k:['回应','现场','声明'],t:'#topics'},
+        {k:['往届','对照','历史'],t:'#topics'},
+        {k:['澄清','传播','截图'],t:'#clues'},
+        {k:['下载','合集','索引'],t:'#dl'},
+        {k:['热榜','热点','最新'],t:'#hot'}
+      ];
+      var target='#topics';
+      for(var i=0;i<map.length;i++){
+        for(var j=0;j<map[i].k.length;j++){
+          if(v.indexOf(map[i].k[j])>-1){target=map[i].t;i=map.length;break;}
+        }
+      }
+      var el=document.querySelector(target);
+      if(el){el.scrollIntoView({behavior:'smooth',block:'start'});}
+    }
+    btn.addEventListener('click',go);
+    input.addEventListener('keydown',function(e){if(e.key==='Enter'){e.preventDefault();go();}});
+  })();
+</script>
+</body>
+</html>
