@@ -1,0 +1,639 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>看片-看片资源_看片网站_看片入口</title>
+<meta name="description" content="看片主题首页，围绕看片这一需求梳理资源分类、浏览入口与使用方式，帮助访问者快速找到想看的影片内容与常用入口。">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23111a2b'/%3E%3Cpath d='M24 18l24 14-24 14z' fill='%23ff5f6d'/%3E%3C/svg%3E">
+<style>
+:root{
+  --ink:#12161f;
+  --ink-2:#3a4152;
+  --muted:#6b7280;
+  --line:#e6e8ee;
+  --bg:#f7f8fb;
+  --card:#ffffff;
+  --brand:#ff5f6d;
+  --brand-2:#ff9966;
+  --deep:#111a2b;
+  --radius:16px;
+}
+*{box-sizing:border-box;}
+html{-webkit-text-size-adjust:100%;}
+body{
+  margin:0;
+  font-family:"PingFang SC","Hiragino Sans GB","Microsoft YaHei",system-ui,-apple-system,"Segoe UI",sans-serif;
+  color:var(--ink);
+  background:var(--bg);
+  line-height:1.75;
+  font-size:16px;
+}
+a{color:inherit;text-decoration:none;}
+img,svg{display:block;max-width:100%;}
+.wrap{width:min(1140px,92vw);margin:0 auto;}
+
+/* Header */
+.site-head{
+  position:sticky;top:0;z-index:50;
+  background:rgba(255,255,255,.92);
+  backdrop-filter:blur(10px);
+  border-bottom:1px solid var(--line);
+}
+.head-inner{
+  display:flex;align-items:center;gap:18px;
+  padding:12px 0;
+}
+.logo{display:flex;align-items:center;gap:10px;flex:0 0 auto;}
+.logo-mark{
+  width:38px;height:38px;border-radius:11px;
+  background:linear-gradient(135deg,var(--brand),var(--brand-2));
+  display:flex;align-items:center;justify-content:center;
+  box-shadow:0 6px 16px rgba(255,95,109,.3);
+}
+.logo-mark svg{width:18px;height:18px;}
+.logo-text{font-size:20px;font-weight:800;letter-spacing:.5px;}
+.nav{
+  display:flex;align-items:center;gap:4px;
+  margin-left:auto;flex-wrap:wrap;
+}
+.nav a{
+  font-size:14.5px;color:var(--ink-2);
+  padding:7px 12px;border-radius:9px;
+  transition:background .18s,color .18s;
+}
+.nav a:hover{background:#fff0f1;color:var(--brand);}
+.nav .nav-cta{
+  background:var(--deep);color:#fff;font-weight:600;
+  padding:8px 16px;margin-left:6px;
+}
+.nav .nav-cta:hover{background:#1d2a44;color:#fff;}
+
+/* Hero */
+.hero{
+  position:relative;overflow:hidden;
+  background:
+    radial-gradient(900px 420px at 12% -10%,rgba(255,95,109,.16),transparent 65%),
+    radial-gradient(700px 380px at 92% 0%,rgba(255,153,102,.18),transparent 60%),
+    linear-gradient(180deg,#ffffff,#f7f8fb);
+  border-bottom:1px solid var(--line);
+}
+.hero-inner{
+  display:grid;grid-template-columns:1.15fr .85fr;
+  gap:40px;align-items:center;
+  padding:56px 0 60px;
+}
+.eyebrow{
+  display:inline-flex;align-items:center;gap:8px;
+  font-size:13px;font-weight:600;color:var(--brand);
+  background:#fff0f1;border:1px solid #ffd9dc;
+  padding:5px 12px;border-radius:999px;margin-bottom:18px;
+}
+h1{
+  font-size:clamp(34px,4.6vw,54px);
+  line-height:1.12;margin:0 0 16px;
+  letter-spacing:-.5px;font-weight:800;
+}
+.hero p.lead{
+  font-size:16.5px;color:var(--ink-2);
+  max-width:38em;margin:0 0 26px;
+}
+.hero-actions{display:flex;flex-wrap:wrap;gap:12px;align-items:center;}
+.btn{
+  display:inline-flex;align-items:center;gap:8px;
+  font-size:15px;font-weight:600;
+  padding:12px 22px;border-radius:12px;
+  transition:transform .16s,box-shadow .16s,background .16s;
+  border:1px solid transparent;cursor:pointer;
+}
+.btn-primary{
+  background:linear-gradient(135deg,var(--brand),var(--brand-2));
+  color:#fff;box-shadow:0 10px 22px rgba(255,95,109,.28);
+}
+.btn-primary:hover{transform:translateY(-1px);box-shadow:0 14px 26px rgba(255,95,109,.34);}
+.btn-ghost{
+  background:#fff;border-color:var(--line);color:var(--ink);
+}
+.btn-ghost:hover{border-color:#cfd4e0;background:#fbfcff;}
+.btn[aria-disabled="true"]{
+  opacity:.55;pointer-events:none;cursor:default;
+}
+.hero-stats{
+  display:flex;gap:26px;margin-top:30px;flex-wrap:wrap;
+}
+.stat b{display:block;font-size:21px;font-weight:800;letter-spacing:-.3px;}
+.stat span{font-size:13px;color:var(--muted);}
+
+/* Hero visual */
+.hero-visual{
+  position:relative;border-radius:20px;overflow:hidden;
+  background:var(--deep);
+  box-shadow:0 24px 50px rgba(17,26,43,.22);
+  aspect-ratio:4/3;
+  display:flex;align-items:center;justify-content:center;
+}
+.hero-visual .rings{position:absolute;inset:0;}
+.screen{
+  position:relative;width:78%;aspect-ratio:16/10;
+  border-radius:12px;background:rgba(255,255,255,.06);
+  border:1px solid rgba(255,255,255,.16);
+  display:flex;align-items:center;justify-content:center;
+  backdrop-filter:blur(2px);
+}
+.play-pulse{
+  width:62px;height:62px;border-radius:50%;
+  background:linear-gradient(135deg,var(--brand),var(--brand-2));
+  display:flex;align-items:center;justify-content:center;
+  box-shadow:0 0 0 0 rgba(255,95,109,.5);
+  animation:pulse 2.4s infinite;
+}
+.play-pulse svg{width:22px;height:22px;margin-left:3px;}
+@keyframes pulse{
+  0%{box-shadow:0 0 0 0 rgba(255,95,109,.45);}
+  70%{box-shadow:0 0 0 26px rgba(255,95,109,0);}
+  100%{box-shadow:0 0 0 0 rgba(255,95,109,0);}
+}
+.hero-visual .tagline{
+  position:absolute;left:18px;bottom:16px;
+  font-size:12.5px;color:rgba(255,255,255,.72);letter-spacing:1px;
+}
+.hero-visual .film-dots{
+  position:absolute;top:14px;right:16px;display:flex;gap:6px;
+}
+.hero-visual .film-dots i{
+  width:7px;height:7px;border-radius:50%;background:rgba(255,255,255,.28);
+}
+.hero-visual .film-dots i:first-child{background:var(--brand);}
+
+/* Sections */
+section{padding:56px 0;}
+.sec-head{margin-bottom:26px;max-width:44em;}
+.sec-kicker{
+  font-size:13px;font-weight:700;letter-spacing:1.5px;
+  color:var(--brand);text-transform:uppercase;margin-bottom:8px;
+}
+h2{
+  font-size:clamp(22px,2.6vw,29px);
+  font-weight:800;letter-spacing:-.3px;margin:0 0 10px;line-height:1.3;
+}
+.sec-head p{margin:0;color:var(--muted);font-size:15.5px;}
+
+/* Category cards */
+.grid-cat{
+  display:grid;grid-template-columns:repeat(4,1fr);gap:16px;
+}
+.cat-card{
+  background:var(--card);border:1px solid var(--line);
+  border-radius:var(--radius);padding:22px 20px;
+  transition:transform .18s,box-shadow .18s,border-color .18s;
+}
+.cat-card:hover{
+  transform:translateY(-3px);
+  box-shadow:0 16px 32px rgba(17,26,43,.08);
+  border-color:#ffd9dc;
+}
+.cat-icon{
+  width:42px;height:42px;border-radius:12px;
+  background:#fff0f1;color:var(--brand);
+  display:flex;align-items:center;justify-content:center;
+  margin-bottom:14px;
+}
+.cat-icon svg{width:20px;height:20px;}
+.cat-card h3{font-size:16.5px;margin:0 0 6px;font-weight:700;}
+.cat-card p{font-size:14px;color:var(--muted);margin:0;}
+
+/* Two column content */
+.split{
+  display:grid;grid-template-columns:1.05fr .95fr;gap:34px;align-items:start;
+}
+.panel{
+  background:var(--card);border:1px solid var(--line);
+  border-radius:var(--radius);padding:28px 26px;
+}
+.panel h3{font-size:18px;margin:0 0 12px;font-weight:800;}
+.panel p{font-size:15px;color:var(--ink-2);margin:0 0 14px;}
+.panel p:last-child{margin-bottom:0;}
+.list-clean{list-style:none;padding:0;margin:0;}
+.list-clean li{
+  display:flex;gap:12px;padding:13px 0;
+  border-bottom:1px dashed var(--line);font-size:14.8px;color:var(--ink-2);
+}
+.list-clean li:last-child{border-bottom:0;padding-bottom:0;}
+.list-clean .num{
+  flex:0 0 auto;width:24px;height:24px;border-radius:7px;
+  background:#eef1f7;color:var(--ink-2);
+  font-size:12.5px;font-weight:700;
+  display:flex;align-items:center;justify-content:center;
+}
+
+/* Search demo */
+.searchbar{
+  display:flex;gap:10px;background:#fff;
+  border:1px solid var(--line);border-radius:14px;
+  padding:8px;margin-bottom:18px;
+  box-shadow:0 6px 18px rgba(17,26,43,.04);
+}
+.searchbar input{
+  flex:1;border:0;outline:0;background:transparent;
+  font-size:15px;padding:8px 12px;color:var(--ink);font-family:inherit;
+}
+.searchbar input::placeholder{color:#a2a8b6;}
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:16px;}
+.chip{
+  font-size:13px;padding:6px 13px;border-radius:999px;
+  background:#fff;border:1px solid var(--line);color:var(--ink-2);
+  cursor:pointer;transition:all .16s;
+}
+.chip:hover,.chip.active{
+  background:var(--deep);border-color:var(--deep);color:#fff;
+}
+.result-line{
+  font-size:13.5px;color:var(--muted);margin-bottom:12px;
+}
+.results{list-style:none;padding:0;margin:0;display:grid;gap:10px;}
+.results li{
+  display:flex;align-items:center;gap:14px;
+  padding:12px 14px;border-radius:12px;background:#fafbfe;
+  border:1px solid #eef0f5;
+}
+.results .thumb{
+  width:46px;height:34px;border-radius:8px;flex:0 0 auto;
+  background:linear-gradient(135deg,#1d2a44,#33405e);
+  display:flex;align-items:center;justify-content:center;
+}
+.results .thumb svg{width:12px;height:12px;opacity:.85;}
+.results .meta b{display:block;font-size:14.5px;font-weight:600;}
+.results .meta span{font-size:12.5px;color:var(--muted);}
+.no-result{font-size:14px;color:var(--muted);padding:12px 2px;display:none;}
+
+/* Steps */
+.steps{
+  display:grid;grid-template-columns:repeat(3,1fr);gap:18px;
+}
+.step{
+  background:#fff;border:1px solid var(--line);
+  border-radius:var(--radius);padding:24px 22px;position:relative;
+}
+.step .idx{
+  font-size:12px;font-weight:800;letter-spacing:1px;
+  color:var(--brand);margin-bottom:10px;
+}
+.step h3{font-size:16px;margin:0 0 8px;font-weight:700;}
+.step p{font-size:14px;color:var(--muted);margin:0;}
+
+/* FAQ */
+.faq{display:grid;gap:12px;}
+details{
+  background:#fff;border:1px solid var(--line);
+  border-radius:13px;padding:16px 20px;
+}
+details[open]{border-color:#ffd9dc;box-shadow:0 10px 24px rgba(255,95,109,.07);}
+summary{
+  cursor:pointer;font-weight:700;font-size:15.5px;list-style:none;
+  display:flex;justify-content:space-between;align-items:center;gap:16px;
+}
+summary::-webkit-details-marker{display:none;}
+summary::after{
+  content:"+";font-size:18px;color:var(--brand);font-weight:600;
+  transition:transform .18s;flex:0 0 auto;
+}
+details[open] summary::after{content:"–";}
+details p{font-size:14.6px;color:var(--ink-2);margin:12px 0 0;}
+
+/* Footer */
+.site-foot{
+  background:var(--deep);color:#c8cfdd;
+  padding:44px 0 26px;margin-top:20px;
+}
+.foot-top{
+  display:flex;justify-content:space-between;gap:30px;
+  flex-wrap:wrap;padding-bottom:26px;
+  border-bottom:1px solid rgba(255,255,255,.1);
+}
+.foot-brand{display:flex;align-items:center;gap:10px;margin-bottom:12px;}
+.foot-brand .logo-text{color:#fff;}
+.foot-desc{font-size:14px;color:#93a0b8;max-width:34em;margin:0;}
+.foot-links{display:flex;gap:34px;flex-wrap:wrap;}
+.foot-col h4{
+  font-size:13px;color:#fff;margin:0 0 10px;
+  letter-spacing:.5px;font-weight:700;
+}
+.foot-col a{
+  display:block;font-size:13.5px;color:#93a0b8;padding:4px 0;
+}
+.foot-col a:hover{color:#fff;}
+.foot-bottom{
+  padding-top:20px;font-size:13px;color:#7d8aa2;
+  display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;
+}
+
+@media (max-width:900px){
+  .hero-inner{grid-template-columns:1fr;gap:30px;padding:40px 0 44px;}
+  .hero-visual{order:-1;aspect-ratio:16/10;max-width:520px;}
+  .grid-cat{grid-template-columns:repeat(2,1fr);}
+  .split{grid-template-columns:1fr;gap:20px;}
+  .steps{grid-template-columns:1fr;}
+  .nav{width:100%;margin-left:0;order:3;}
+  .head-inner{flex-wrap:wrap;gap:10px;}
+}
+@media (max-width:520px){
+  body{font-size:15.5px;}
+  .grid-cat{grid-template-columns:1fr;}
+  .hero-stats{gap:18px;}
+  .stat b{font-size:18px;}
+  section{padding:40px 0;}
+  .panel{padding:22px 18px;}
+  .nav a{font-size:14px;padding:7px 9px;}
+  .nav .nav-cta{padding:8px 12px;margin-left:0;}
+  .foot-links{gap:24px;}
+}
+</style>
+    <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+</head>
+<body>
+
+<header class="site-head">
+  <div class="wrap head-inner">
+    <a class="logo" href="#top" aria-label="看片 首页">
+      <span class="logo-mark" aria-hidden="true">
+        <svg viewBox="0 0 24 24" fill="none"><path d="M8 5.5v13l11-6.5z" fill="#fff"/></svg>
+      </span>
+      <span class="logo-text">看片</span>
+    </a>
+    <nav class="nav" aria-label="主导航">
+      <a href="#category">内容分类</a>
+      <a href="#find">找片入口</a>
+      <a href="#how">使用方式</a>
+      <a href="#faq">常见问题</a>
+      <a class="nav-cta" href="#find">开始看片</a>
+    </nav>
+  </div>
+</header>
+
+<main id="top">
+
+  <section class="hero">
+    <div class="wrap hero-inner">
+      <div class="hero-copy">
+        <span class="eyebrow">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M8 5.5v13l11-6.5z" fill="currentColor"/></svg>
+          主题首页 · 内容浏览
+        </span>
+        <h1>看片</h1>
+        <p class="lead">看片这件事，先想清楚看什么，再决定去哪看。这个首页把看片常见的几类需求拆开：按类型找片、按片单浏览、按入口直达，让你从打开页面到开始看片，少绕几步。</p>
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="#find">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M8 5.5v13l11-6.5z" fill="currentColor"/></svg>
+            进入找片入口
+          </a>
+          <a class="btn btn-ghost" href="#category">浏览内容分类</a>
+        </div>
+        <div class="hero-stats">
+          <div class="stat"><b>4</b><span>主要内容分类</span></div>
+          <div class="stat"><b>3</b><span>找片步骤</span></div>
+          <div class="stat"><b>1</b><span>页内统一入口</span></div>
+        </div>
+      </div>
+      <div class="hero-visual" aria-hidden="true">
+        <svg class="rings" viewBox="0 0 400 300" preserveAspectRatio="none">
+          <circle cx="200" cy="150" r="120" fill="none" stroke="rgba(255,255,255,.06)" stroke-width="1"/>
+          <circle cx="200" cy="150" r="85" fill="none" stroke="rgba(255,255,255,.08)" stroke-width="1"/>
+          <circle cx="200" cy="150" r="150" fill="none" stroke="rgba(255,95,109,.12)" stroke-width="1"/>
+        </svg>
+        <div class="film-dots"><i></i><i></i><i></i></div>
+        <div class="screen">
+          <span class="play-pulse">
+            <svg viewBox="0 0 24 24" fill="none"><path d="M8 5.5v13l11-6.5z" fill="#fff"/></svg>
+          </span>
+        </div>
+        <span class="tagline">SCREEN · WATCH · REPEAT</span>
+      </div>
+    </div>
+  </section>
+
+  <section id="category">
+    <div class="wrap">
+      <div class="sec-head">
+        <div class="sec-kicker">Content</div>
+        <h2>看片之前，先按分类缩小范围</h2>
+        <p>不同人打开页面想看的并不一样：有人想直接找一部片，有人想先逛片单。下面四类覆盖了看片最常见的起点，选一个方向再往下走。</p>
+      </div>
+      <div class="grid-cat">
+        <article class="cat-card">
+          <div class="cat-icon"><svg viewBox="0 0 24 24" fill="none"><rect x="3" y="5" width="18" height="14" rx="2.5" stroke="currentColor" stroke-width="1.7"/><path d="M10 9.5v5l4.2-2.5z" fill="currentColor"/></svg></div>
+          <h3>电影长片</h3>
+          <p>适合留出一整段时间观看的看片选择，按题材与年代归类，先看简介再决定。</p>
+        </article>
+        <article class="cat-card">
+          <div class="cat-icon"><svg viewBox="0 0 24 24" fill="none"><path d="M4 6h16M4 12h16M4 18h10" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/></svg></div>
+          <h3>剧集连载</h3>
+          <p>按季与集组织，适合碎片时间推进。看片时关注更新状态，避免中途断档。</p>
+        </article>
+        <article class="cat-card">
+          <div class="cat-icon"><svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="8.5" stroke="currentColor" stroke-width="1.7"/><path d="M12 7.5V12l3 2" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/></svg></div>
+          <h3>短片速览</h3>
+          <p>十几分钟就能看完的看片内容，适合通勤或睡前，单次负担小。</p>
+        </article>
+        <article class="cat-card">
+          <div class="cat-icon"><svg viewBox="0 0 24 24" fill="none"><path d="M5 4h11l3 3v13H5z" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/><path d="M8 10h8M8 14h5" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/></svg></div>
+          <h3>片单合集</h3>
+          <p>由多个主题串起来的看片清单，一次浏览多个候选，再挑一部开始。</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section id="find" style="background:#fff;border-top:1px solid var(--line);border-bottom:1px solid var(--line);">
+    <div class="wrap">
+      <div class="sec-head">
+        <div class="sec-kicker">Find</div>
+        <h2>找片入口：用关键词快速定位</h2>
+        <p>输入片名或题材关键词，下方列表会即时过滤。这里展示的是页面内的浏览示例，帮助你理解看片时的检索思路。</p>
+      </div>
+      <div class="panel">
+        <div class="searchbar">
+          <input id="kw" type="search" placeholder="输入片名或题材，如 悬疑、纪录片、短片" aria-label="搜索片名或题材">
+          <button class="btn btn-primary" id="go" type="button">搜索</button>
+        </div>
+        <div class="chips" id="chips">
+          <button class="chip active" type="button" data-k="">全部</button>
+          <button class="chip" type="button" data-k="电影">电影</button>
+          <button class="chip" type="button" data-k="剧集">剧集</button>
+          <button class="chip" type="button" data-k="短片">短片</button>
+          <button class="chip" type="button" data-k="纪录片">纪录片</button>
+        </div>
+        <div class="result-line" id="count">共 6 条看片示例</div>
+        <ul class="results" id="list">
+          <li data-tag="电影 悬疑"><span class="thumb"><svg viewBox="0 0 24 24" fill="none"><path d="M8 5.5v13l11-6.5z" fill="#fff"/></svg></span><span class="meta"><b>悬疑电影 · 示例条目一</b><span>电影 / 悬疑 · 约 110 分钟</span></span></li>
+          <li data-tag="电影 剧情"><span class="thumb"><svg viewBox="0 0 24 24" fill="none"><path d="M8 5.5v13l11-6.5z" fill="#fff"/></svg></span><span class="meta"><b>剧情电影 · 示例条目二</b><span>电影 / 剧情 · 约 125 分钟</span></span></li>
+          <li data-tag="剧集 都市"><span class="thumb"><svg viewBox="0 0 24 24" fill="none"><path d="M8 5.5v13l11-6.5z" fill="#fff"/></svg></span><span class="meta"><b>都市剧集 · 示例条目三</b><span>剧集 / 都市 · 第一季</span></span></li>
+          <li data-tag="剧集 悬疑"><span class="thumb"><svg viewBox="0 0 24 24" fill="none"><path d="M8 5.5v13l11-6.5z" fill="#fff"/></svg></span><span class="meta"><b>悬疑剧集 · 示例条目四</b><span>剧集 / 悬疑 · 更新中</span></span></li>
+          <li data-tag="短片 动画"><span class="thumb"><svg viewBox="0 0 24 24" fill="none"><path d="M8 5.5v13l11-6.5z" fill="#fff"/></svg></span><span class="meta"><b>动画短片 · 示例条目五</b><span>短片 / 动画 · 约 12 分钟</span></span></li>
+          <li data-tag="纪录片 自然"><span class="thumb"><svg viewBox="0 0 24 24" fill="none"><path d="M8 5.5v13l11-6.5z" fill="#fff"/></svg></span><span class="meta"><b>自然纪录片 · 示例条目六</b><span>纪录片 / 自然 · 约 50 分钟</span></span></li>
+        </ul>
+        <p class="no-result" id="empty">没有匹配条目，换个关键词试试。</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="how">
+    <div class="wrap">
+      <div class="sec-head">
+        <div class="sec-kicker">How</div>
+        <h2>从打开页面到开始看片</h2>
+        <p>把看片流程拆成三步，每一步只做一件事，减少在入口之间来回切换的时间。</p>
+      </div>
+      <div class="steps">
+        <div class="step">
+          <div class="idx">STEP 01</div>
+          <h3>先定方向</h3>
+          <p>在分类里挑一个大类，或直接在搜索框输入关键词，把候选范围压到可比较的数量。</p>
+        </div>
+        <div class="step">
+          <div class="idx">STEP 02</div>
+          <h3>再看信息</h3>
+          <p>看片之前确认时长、类型与更新状态，判断是否适合当下的时间与心情。</p>
+        </div>
+        <div class="step">
+          <div class="idx">STEP 03</div>
+          <h3>然后进入</h3>
+          <p>确定目标后通过对应入口进入观看，避免在多个标签页之间反复跳转。</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section style="background:#fff;border-top:1px solid var(--line);">
+    <div class="wrap split">
+      <div class="panel">
+        <h3>关于看片，这个首页能做什么</h3>
+        <p>看片本身是一个动作，但支撑它的是一串判断：看什么类型、有多长时间、是否追更。页面把这几件事放在同一屏里，让你在开始看片前就把条件想清楚。</p>
+        <p>分类区负责缩小范围，找片入口负责用关键词定位，使用方式区把流程固定下来。三块内容各做一件事，不重复堆叠同一批信息。</p>
+        <p>页面内的条目为浏览示例，用于说明检索与筛选的用法；实际片源与可用范围以你使用的观看渠道为准。</p>
+      </div>
+      <div class="panel">
+        <h3>看片时容易忽略的三点</h3>
+        <ul class="list-clean">
+          <li><span class="num">1</span><span>先确认时长。看片最怕开场十分钟才发现时间不够，选片时先看片长再决定。</span></li>
+          <li><span class="num">2</span><span>追更类内容先看更新状态。剧集连载适合按季推进，中途断档会打断看片节奏。</span></li>
+          <li><span class="num">3</span><span>片单比单部更适合探索。想扩展看片范围时，从主题片单里挑一部，比漫无目的浏览更有效。</span></li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section id="faq">
+    <div class="wrap">
+      <div class="sec-head">
+        <div class="sec-kicker">FAQ</div>
+        <h2>常见问题</h2>
+        <p>关于看片入口与页面使用的高频疑问，集中回答在这里。</p>
+      </div>
+      <div class="faq">
+        <details open>
+          <summary>这个页面提供在线播放吗？</summary>
+          <p>页面本身是看片主题的浏览与导航首页，负责分类、检索与流程说明，不内嵌播放器。观看请通过你实际使用的渠道进入。</p>
+        </details>
+        <details>
+          <summary>搜索框里的条目是真实片源吗？</summary>
+          <p>列表中的条目为浏览示例，用来演示按片名、题材过滤的方式，不代表具体片源清单。实际可看内容以观看渠道为准。</p>
+        </details>
+        <details>
+          <summary>怎样更快决定看什么？</summary>
+          <p>先限定一个大类，再用关键词缩小范围，最后核对时长与更新状态。三步走完，看片的选择基本就定了。</p>
+        </details>
+        <details>
+          <summary>下载入口现在能用吗？</summary>
+          <p>下载入口目前处于占位状态，暂未开放。可先使用页面内的分类与找片入口浏览内容。</p>
+        </details>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-foot">
+  <div class="wrap">
+    <div class="foot-top">
+      <div>
+        <div class="foot-brand">
+          <span class="logo-mark" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none"><path d="M8 5.5v13l11-6.5z" fill="#fff"/></svg>
+          </span>
+          <span class="logo-text">看片</span>
+        </div>
+        <p class="foot-desc">看片主题首页，围绕分类浏览、关键词找片与观看流程展开，帮助访问者更快确定看什么、去哪看。</p>
+      </div>
+      <div class="foot-links">
+        <div class="foot-col">
+          <h4>页面导航</h4>
+          <a href="#category">内容分类</a>
+          <a href="#find">找片入口</a>
+          <a href="#how">使用方式</a>
+          <a href="#faq">常见问题</a>
+        </div>
+        <div class="foot-col">
+          <h4>内容方向</h4>
+          <a href="#category">电影长片</a>
+          <a href="#category">剧集连载</a>
+          <a href="#category">短片速览</a>
+          <a href="#category">片单合集</a>
+        </div>
+        <div class="foot-col">
+          <h4>其他</h4>
+          <a href="#" data-download-placeholder="true" aria-disabled="true" tabindex="-1" style="pointer-events:none;opacity:.6;">下载</a>
+          <a href="#top">回到顶部</a>
+        </div>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <span>看片 · 主题首页</span>
+      <span>页面内容为浏览示例，实际内容以观看渠道为准</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var input = document.getElementById('kw');
+  var list = document.getElementById('list');
+  var items = Array.prototype.slice.call(list.querySelectorAll('li'));
+  var count = document.getElementById('count');
+  var empty = document.getElementById('empty');
+  var chips = Array.prototype.slice.call(document.querySelectorAll('#chips .chip'));
+  var currentChip = '';
+
+  function apply(){
+    var kw = (input.value || '').trim().toLowerCase();
+    var shown = 0;
+    items.forEach(function(li){
+      var tag = (li.getAttribute('data-tag') || '').toLowerCase();
+      var text = li.textContent.toLowerCase();
+      var okChip = !currentChip || tag.indexOf(currentChip.toLowerCase()) > -1;
+      var okKw = !kw || tag.indexOf(kw) > -1 || text.indexOf(kw) > -1;
+      var show = okChip && okKw;
+      li.style.display = show ? '' : 'none';
+      if(show) shown++;
+    });
+    count.textContent = '共 ' + shown + ' 条看片示例';
+    empty.style.display = shown === 0 ? 'block' : 'none';
+  }
+
+  input.addEventListener('input', apply);
+  document.getElementById('go').addEventListener('click', apply);
+  input.addEventListener('keydown', function(e){
+    if(e.key === 'Enter'){ e.preventDefault(); apply(); }
+  });
+  chips.forEach(function(c){
+    c.addEventListener('click', function(){
+      chips.forEach(function(x){ x.classList.remove('active'); });
+      c.classList.add('active');
+      currentChip = c.getAttribute('data-k') || '';
+      apply();
+    });
+  });
+})();
+</script>
+
+</body>
+</html>
